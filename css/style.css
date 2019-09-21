@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+/* ------------------------
+  anim_1 <!-- 上から線が降ってくる -->
+------------------------ */
+.anim_1 {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: #222;
+}
+
+.anim_1 div {
+  width: 16.6666%;
+  height: 100vh;
+  transform: translateY(-100%);
+}
+
+.anim_1 div:not(:nth-child(1)) {
+  border-left: 2px solid #2B8BCA;
+}
+
+.anim_1 div:nth-child(2) {  animation: rain 1.5s .5s cubic-bezier(0, 0, 0.26, 0.99) forwards, move-rain_2 2s 2.5s cubic-bezier(0, 0, 0.26, 0.99) forwards, goUp-rain .5s 3.5s forwards;}
+.anim_1 div:nth-child(3) {  animation: rain 1.5s .3s cubic-bezier(0, 0, 0.26, 0.99) forwards, move-rain_3 2s 2.5s cubic-bezier(0, 0, 0.26, 0.99) forwards, goUp-rain .5s 3.5s forwards;}
+.anim_1 div:nth-child(4) {  animation: rain 1.5s .3s cubic-bezier(0, 0, 0.26, 0.99) forwards,                                                            goUp-rain .5s 3.5s forwards;}
+.anim_1 div:nth-child(5) {  animation: rain 1.5s .7s cubic-bezier(0, 0, 0.26, 0.99) forwards, move-rain_5 2s 2.5s cubic-bezier(0, 0, 0.26, 0.99) forwards, goUp-rain .5s 3.5s forwards;}
+.anim_1 div:nth-child(6) {  animation: rain 1.5s .8s cubic-bezier(0, 0, 0.26, 0.99) forwards, move-rain_6 2s 2.5s cubic-bezier(0, 0, 0.26, 0.99) forwards, goUp-rain .5s 3.5s forwards;}
+
+@keyframes rain { 100%  {transform: translateY(0);}}
+
+@keyframes move-rain_2 { 0% {transform: translateY(0);} 40% {transform: translate(200%, 0);}  100% {transform: translate(200%, 0);} }
+@keyframes move-rain_3 { 0% {transform: translateY(0);} 40% {transform: translate(100%, 0);}  100% {transform: translate(100%, 0);} }
+@keyframes move-rain_5 { 0% {transform: translateY(0);} 40% {transform: translate(-100%, 0);} 100% {transform: translate(-100%, 0);}}
+@keyframes move-rain_6 { 0% {transform: translateY(0);} 40% {transform: translate(-200%, 0);} 100% {transform: translate(-200%, 0);}}
+
+@keyframes goUp-rain { 100% { opacity: 0;}}
+
+/* ------------------------
+  anim_2　中心から円が現れる
+------------------------ */
+.anim_2 {
+  background: #222;
+  opacity: 0;
+}
+
+.circle1 { 
+  position: absolute;
+  top: calc((100vh - 10px) / 2);
+  left: calc((100vw - 10px) / 2);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.circle {
+  position: absolute;
+  top: calc((100vh - 120vw) / 2);
+  left: calc((100vw - 120vw) / 2);
+  width: 120vw;
+  height: 120vw;
+  border-radius: 50%;
+}
+
+.circle1,
+.circle2 {
+  background: rgb(175, 79, 55);
+ }
+ 
+.circle3 {
+  background: #222;
+}
+
+.circle4 {
+  background: rgb(175, 79, 55);
+}
+
+.circle5 {
+  background: #222;
+}
+/* ------------------------
+  anim_3 四隅から四角が現れる
+------------------------ */
+.anim_3 {
+  opacity: 0;
+}
+
+.squ {
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  background: #222;
+}
+
+.squ1-1 {
+  top: 0;
+  left: 0;
+}
+
+.squ1-2 {
+  top: 0;
+  right: 0;
+}
+
+.squ1-3 {
+  bottom: 0;
+  left: 0;
+}
+
+.squ1-4 {
+  bottom: 0;
+  right: 0;
+}
+
+.squ_2 {
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  background: rgb(211, 175, 31);
+}
+
+.squ2-1 {
+  top: 0;
+  left: 0;
+}
+
+.squ2-2 {
+  top: 0;
+  right: 0;
+}
+
+.squ2-3 {
+  bottom: 0;
+  left:0;
+}
+
+.squ2-4 {
+  bottom: 0;
+  right: 0;
+}
+/* ------------------------
+  anim_4 左右から攻められる
+------------------------ */
+.belt {
+  background: #222;
+  width: 100vw;
+  height: 16.66666vh;
+}
+/* ------------------------
+  anim_5  放射線
+------------------------ */
+.anim_5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vw;
+  opacity: 0;
+}
+.line_wrap {
+  position: absolute;
+  top: 0;
+  left: calc((100vw - 2px) / 2);
+  width: 2px;
+  height: 100vw;
+}
+
+.line {
+  width: 2px;
+  height: 100%;
+  background: rgb(52, 138, 141);
+}
+
+.circle5 {
+  position: absolute;
+  top: 0;
+  left: calc((100% - 100vw) / 2);
+  width: 100vw;
+  height: 100vw;
+  background: rgb(52, 138, 141);
+  border-radius: 50%;
+  box-shadow: 0 0 20px 20px rgb(52, 138, 141);
+}
+
+/* ------------------------
+  anim_6  小さい放射線（end）
+------------------------ */
+.anim_6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vw;
+  opacity: 0;
+}
+
+.end {
+  position: relative;
+  width: 20vw;
+  height: 20vw;
+}
+
+.line-end_wrap {
+  position: absolute;
+  top: calc((100% - 10vw) / 2);
+  left: calc((100% - 2px) / 2);
+  width: 2px;
+  height: 10vw;
+  line-height: 10vw;
+}
+
+.line-end {
+  width: 1px;
+  height: 100%;
+  background: #fff;
+}
+
+.circle6 {
+  position: absolute;
+  top: calc((100% - 10vw) / 2);
+  left: calc((100% - 10vw) / 2);
+  width: 10vw;
+  height: 10vw;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.txt6 {
+  position: absolute;
+  top: calc((100% - 10vw) / 2);
+  left: calc((100% - 10vw) / 2);
+  width: 10vw;
+  height: 10vw;
+  font-size: 10vw;
+  font-weight: bold;
+  color: rgb(87, 87, 87);
+  line-height: 10vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .anim_3 {
+  position: absolute;
+  top: calc((100vh - 500px )/2);
+  left: calc((100vw - 500px )/2);
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+} */
+
+
+
+
+/* .line {
+  position: absolute;
+  top: calc((100% - 20px) / 2);
+  left: calc((100% - 20px) / 2);
+  width: 2px;
+  height: 10px;
+  background:#2B8BCA; */
+  /* transform: scaleY(0); */
+  /* transform-origin: bottom left; */
+/* } */
+/* 
+.line:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.line:nth-child(2) {
+  transform: rotate(45deg);
+}
+.line:nth-child(3) {
+  transform: rotate(90deg);
+}
+.line:nth-child(4) {
+  transform: rotate(135deg);
+}
+.line:nth-child(5) {
+  transform: rotate(180deg);
+}
+.line:nth-child(6) {
+  transform: rotate(225deg);
+}
+.line:nth-child(7) {
+  transform: rotate(270deg);
+}
+.line:nth-child(8) {
+  transform: rotate(315deg);
+} */
